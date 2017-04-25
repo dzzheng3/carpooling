@@ -3,6 +3,7 @@ package com.group3;
 import java.sql.*;
 
 public class MysqlJdbc {
+
 	public static void main(String args[]) {
 		try {
 			Class.forName("com.mysql.jdbc.Driver"); // ¼ÓÔØMYSQL JDBCÇý¶¯³ÌÐò
