@@ -3,7 +3,6 @@ package com.constants;
 public class ColumnConstants {
 	
 	//User
-
 	
 	public static final String USER_ID = "userid";
 	public static final String FULL_NAME = "fullname";
