@@ -27,9 +27,6 @@ public class RegisterServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// doGet(request, response);
-		// todo regist
-		
 		HttpSession session = request.getSession();
 		User user = new User();
 		String password = request.getParameter("password");
@@ -49,7 +46,7 @@ public class RegisterServlet extends HttpServlet {
 		
 		UserDAOService userSevice = new UserDAOService();
 		userSevice.registUser(user);	
-		System.out.println("regist successfully");
+		System.out.println("registered successfully");
 		request.getRequestDispatcher("WEB-INF/jsp/login.jsp").forward(request, response);
 	}
 	

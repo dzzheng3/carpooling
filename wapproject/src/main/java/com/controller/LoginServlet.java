@@ -7,11 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+import org.apache.commons.lang3.StringUtils;
 import com.constants.Constants;
 import com.db.service.UserDAOService;
 import com.model.User;
-import com.mysql.jdbc.StringUtils;
+
+
 
 
 @WebServlet("/LoginServlet")
@@ -55,7 +56,7 @@ public class LoginServlet extends HttpServlet {
 	
 	private boolean auth(String password, String email, UserDAOService service){
 		
-		if(StringUtils.isNullOrEmpty(password) || StringUtils.isNullOrEmpty(email)){
+		if(StringUtils.isEmpty(password) || StringUtils.isEmpty(email)){
 			return false;
 		}
 		

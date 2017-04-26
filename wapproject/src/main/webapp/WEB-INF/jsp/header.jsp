@@ -38,7 +38,7 @@
 		                <div class="col-md-4">
 		                    <div class="header-top-right" style="padding-top: 15px;">
 		                        <span class="login">
-		                            Welcome,
+		                            Welcome
 		                            <span class="entry-meta" style="color: #dc2a0b;font-size:medium;">
 		                                ${userSession.email}
 		                            </span>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%@include file="head.jsp" %>
+<%@include file="head.jsp"%>
 </head>
 <body>
 
 
- <script type="text/javascript">
+	<script type="text/javascript">
 function checkPassword(str)
 {
   var re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
@@ -38,13 +38,37 @@ function checkForm(form)
     return false;
   }
   return true;
+ }
+ 
+ function checkAge(form){
+	 if(!calculateAge(form.dob.value)){
+		 alert("You need to be 18 years of age and older!");
+		 form.dob.focus();
+		 return false;
+	 }
+	 return true;
+ }
+ 
+function calculateAge(dob)
+{
+    // var dob = document.getElementByName("dob").value;
+     var now = new Date();
+    var birthdate = now.getYear();
+    age= birthdate - dob;
+    if  (age<18)
+    {
+       
+        return false;
+    }
+    else{
+    	return true;
+    }
+
 }
 
 </script>
- 
- 
- 
-    <div class="site-wrapper">
+
+ <div class="site-wrapper">
         <%@include file="header.jsp" %>
         <div class="main" role="main">
             <section class="page-content">
@@ -55,13 +79,20 @@ function checkForm(form)
                             <div class="spacer-lg visible-sm visible-xs"></div>
                             <div class="box">
                                 <h3>Register</h3>
-                                <form action="RegisterServlet" method="POST" role="form" onsubmit="return checkForm(this);">
+                                <form action="RegisterServlet" method="POST" role="form" onsubmit="return checkForm(this)&&checkAge(this);">
                                     <div class="form-group">
                                         <label>
                                             Username
                                             <span class="required">*</span>
                                         </label>
                                         <input type="text" name="username" class="form-control" />
+                                    </div>
+                                     <div class="form-group">
+                                        <label>
+                                            BirthDate
+                                            <span class="required">*</span>
+                                        </label>
+                                        <input type="text" name="dob" class="form-control" />
                                     </div>
                                     <div class="form-group">
                                         <label>
@@ -80,7 +111,7 @@ function checkForm(form)
                                     </div>
                                     <div class="form-group">
                                         <label>
-                                            zip code
+                                            Zip code
                                             <span class="required">*</span>
                                         </label>
                                         <input type="text" name="zipcode" class="form-control" />
@@ -125,3 +156,5 @@ function checkForm(form)
     
 </body>
 </html>
+
+	
