@@ -63,15 +63,17 @@ public class UserDAO extends DAO{
 	
 	public int saveUser(User user){  
 	    int i = 0;  
-	    String UPDATE_USER = "UPDATE users set" 
-	    + ColumnConstants.EMAIL + "= ?" 
-	    + ColumnConstants.PASSWORD + "= ?"
-	    + ColumnConstants.USER_ID + "= ?";	   
+	    String UPDATE_USER = "UPDATE users set " 
+	    + ColumnConstants.EMAIL + "=?," 
+	    + ColumnConstants.PASSWORD + "=?,"
+	    + ColumnConstants.FULL_NAME + "=? where userid=?";	
+	    System.out.println("user.getId()"+user.getId());
 	    try {  
 	        PreparedStatement preStmt =con.prepareStatement(UPDATE_USER);  
 	        preStmt.setString(1,(user.getEmail()));  
 	        preStmt.setString(2,(user.getPassword()));  
-	        preStmt.setString(3,(user.getFullname()));  
+	        preStmt.setString(3,(user.getFullname())); 
+	        preStmt.setInt(4,(user.getId()));  
 	        i = preStmt.executeUpdate();  
 	    }  catch (SQLException e)  {  
 	        e.printStackTrace();  

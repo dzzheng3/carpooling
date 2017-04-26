@@ -3,7 +3,28 @@
       function initMap() {
     	  var geocoder = new google.maps.Geocoder();
     	  var address = $("#cityDestination").text();
+    	  var citySource1 = $("#citySource").text();
     	  var myLatLng = {lat: -25.363, lng: 131.044};
+    	  var latitude;
+    	  var longitude;
+    	  if (citySource1 !== null || citySource1 !== undefined || citySource1 !== '') { 
+          	{ 
+          	    if (navigator.geolocation) //html5
+          	    { 
+          	        navigator.geolocation.getCurrentPosition(showPosition); 
+          	    } 
+          	    else 
+          	    { 
+          	    	console.log("your brower does not support navigator!");
+          	    } 
+          	}	
+          } 
+          function showPosition(position) 
+          { 
+        	  latitude = position.coords.latitude ; 
+        	  longitude= position.coords.longitude;     
+          }
+    	 
     	  var directionsService = new google.maps.DirectionsService;
 	      var directionsDisplay = new google.maps.DirectionsRenderer;
 	     
