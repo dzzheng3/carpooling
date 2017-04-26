@@ -115,5 +115,41 @@ public class UserDAO extends DAO{
 		
 		return user;
 	}
+	public User getUserByName(String fullName) throws SQLException{
+		
+		User user = new User();
+		String SELECT_USER = "SELECT "
+				+ ColumnConstants.USER_ID+","
+				+ ColumnConstants.FULL_NAME+","
+				+ ColumnConstants.GENDER+","
+				+ ColumnConstants.STATE+","
+				+ ColumnConstants.CITY+","
+				+ ColumnConstants.STREET+","
+				+ ColumnConstants.ZIP+","
+				+ ColumnConstants.BIRTH_YEAR+","
+				+ ColumnConstants.EMAIL+","
+				+ ColumnConstants.PASSWORD+" "
+				+ "FROM users where fullname=?";
+		
+		PreparedStatement pstmt = con.prepareStatement(SELECT_USER);
+		pstmt.setString(1, fullName);
+		ResultSet rs = pstmt.executeQuery();
+		
+		if(rs.next()){
+			user.setId(rs.getInt(ColumnConstants.USER_ID));
+			user.setFullname(rs.getString(ColumnConstants.FULL_NAME));
+			user.setState(rs.getString(ColumnConstants.STATE));
+			user.setCity(rs.getString(ColumnConstants.CITY));
+			user.setStreet(rs.getString(ColumnConstants.STREET));
+			user.setZip(rs.getInt(ColumnConstants.ZIP));
+			user.setBirthYear(rs.getInt(ColumnConstants.BIRTH_YEAR));
+			user.setEmail(rs.getString(ColumnConstants.EMAIL));
+			user.setPassword(rs.getString(ColumnConstants.PASSWORD));
+			
+			user.setGender(rs.getInt(ColumnConstants.GENDER));
+		}
+		
+		return user;
+	}
 
 }
