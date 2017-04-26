@@ -36,14 +36,15 @@ public class UserDAO extends DAO{
 
 	public int insertUser(User user){  
 	    int i = 0;  
-	    String INSERT_USER = "INSERT into users (" 
+	    String INSERT_USER = "INSERT INTO users (" 
 	    + ColumnConstants.EMAIL + "," 
 	    + ColumnConstants.PASSWORD + ","
 	    + ColumnConstants.FULL_NAME + ","
 	    + ColumnConstants.GENDER + ","
 	    + ColumnConstants.STATE + ","
-	    + ColumnConstants.ZIP + ","
-	    + ") values(?,?,?,?,?,?)";	   
+	    + ColumnConstants.ZIP + ""
+	    + ") VALUES (?,?,?,?,?,?)";	   
+//	    String INSERT_USER = "INSERT INTO users VALUES(?,?,?,?,?,?,?,?,?,?,?)";	   
 	    
 	    try {  
 	        PreparedStatement preStmt =con.prepareStatement(INSERT_USER);  
