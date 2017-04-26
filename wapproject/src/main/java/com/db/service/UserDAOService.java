@@ -25,6 +25,19 @@ public class UserDAOService extends DAOService{
 		return password;
 	}
 	
+	public String getPasswordByName(String name){
+		
+		String password = "";
+		
+		try {
+			password = dao.getPasswordByName(name);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return password;
+	}
+	
 	
 	public User getUser(String email){
 		

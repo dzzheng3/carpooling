@@ -32,6 +32,22 @@ public class UserDAO extends DAO{
 		return password;
 		
 	}
+	public String getPasswordByName(String name) throws SQLException{
+		
+		String password = "";
+		String SELECT_ROOMBYID = "SELECT password FROM users WHERE fullname=?";
+		PreparedStatement pstmt = con.prepareStatement(SELECT_ROOMBYID);
+		pstmt.setString(1, name);
+		ResultSet rs = pstmt.executeQuery();
+		
+		while (rs.next()) {
+			password = rs.getString("password");
+		}
+		pstmt.close();
+		
+		return password;
+		
+	}
 	
 
 	public int insertUser(User user){  
