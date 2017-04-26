@@ -10,7 +10,9 @@ public class DBConnection {
 	private static final String USER = "root";	
 	private static final String PASSWORD = "1234";
 	private static final String DRIVER_URL = "com.mysql.jdbc.Driver";
-	private static final String DB_URL = "jdbc:mysql://localhost:3306/project";
+	String dburl = "jdbc:mysql://localhost:3306/project";
+	//private static final String DB_URL = "jdbc:mysql://172.17.2.236:3306/project";
+	//private static final String DB_URL = "jdbc:mysql://localhost:3306/carpoolingdb";
 	
 	private Connection connection;
 	
@@ -32,7 +34,7 @@ public class DBConnection {
 			Class.forName(DRIVER_URL);
 			System.out.println("Initialized JDBC Driver!");
 			
-			connection = DriverManager.getConnection(DB_URL,USER, PASSWORD);
+			connection = DriverManager.getConnection(dburl,USER, PASSWORD);
 			
 		} catch (SQLException e) {
 			e.printStackTrace();

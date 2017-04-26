@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<taglib version="2.1" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 		xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd">
-	 
+<!-- JSP page containing a custom tag is translated into a servlet, the tag is converted to operations -->
+<!-- on an object called a tag handler. The Web container then invokes  -->
+<!-- those operations when the JSP page's servlet is executed. -->
 <tlib-version>1.0</tlib-version>
 	<short-name>carpooling_tag_library</short-name>
 	<uri>/WEB-INF/tlds/formFields</uri>
@@ -12,10 +14,10 @@
 		<tag-class>com.tag.InputFormTag</tag-class>
 		<body-content>empty</body-content>
 		
-		<attribute>
-			<name>name</name>
-			<required>true</required>
-			<rtexprvalue>true</rtexprvalue>
+		<attribute> 
+			<name>name</name> <!-- name must be unique for a particular tag. -->
+			<required>true</required> <!-- required or optional -->
+			<rtexprvalue>true</rtexprvalue> <!--Declares if a runtime expression value for a tag attribute is valid  -->
 		</attribute>
 		<attribute>
 			<name>type</name>

@@ -7,8 +7,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DBConnectionTest {
-
-    String dburl = "jdbc:mysql://localhost:3306/project";
+	//private static final String DB_URL = "jdbc:mysql://localhost:3306/project"
+    //String dburl = "jdbc:mysql://172.17.2.236:3306/project";
+	String dburl = "jdbc:mysql://localhost:3306/project";
 
     public DBConnectionTest() {
         try {
