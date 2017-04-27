@@ -15,7 +15,7 @@
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
                             <div class="box">
-                                <h3>Login</h3>
+                                <h3 style="color:red">Login</h3>
                                 <%-- session here--%>
                                 <form action="LoginServlet" method="POST" role="form">
                                     <div class="form-group">

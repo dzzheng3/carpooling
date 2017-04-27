@@ -17,7 +17,7 @@
 				 		<div class="col-md-6">
 				 		<div class="spacer-lg visible-sm visible-xs"></div>
 				 		<div class="box">
-				 			<h3>Add Post</h3>
+				 			<h3 style="color:red">Add Post</h3>
 				 			<form action="PostTripServlet" method="POST" role="form">
 				 			
 				 				<div class="form-group">

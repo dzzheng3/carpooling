@@ -70,6 +70,7 @@ function calculateAge(dob)
 
  <div class="site-wrapper">
         <%@include file="header.jsp" %>
+        <input>
         <div class="main" role="main">
             <section class="page-content">
                 <div class="container">

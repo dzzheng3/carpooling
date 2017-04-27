@@ -8,7 +8,7 @@
             </div>
             <header class="entry-header">
                 <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-md-8">
                         <h3 id='TODO_TRIP_ID'>                        	
                             ${post.source} -> ${post.destination} <br>
                             ${post.post}
@@ -22,7 +22,7 @@
                             </span>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <span class="entry-date">
                             ${post.dateCreated}
                         </span>

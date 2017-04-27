@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <title>Car Pooling</title>
 <link href='http://fonts.googleapis.com/css?family=Anton|Muli:300,400,400italic,300italic|Oswald' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/fonts/font-awesome/css/font-awesome.css">
 <link rel="stylesheet" href="scripts/lib/sweetalert/sweetalert2.css">
 <link rel="stylesheet" href="css/theme.css">

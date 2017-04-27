@@ -2826,6 +2826,7 @@ h2 + .featured-section {
   margin-left: 5px; 
   margin-bottom: 10px;
   text-align: left;
+  
 }
 .entry .entry-header h2 {
   margin-bottom: .25em;
@@ -3031,9 +3032,13 @@ h2 + .featured-section {
     position: absolute;
     left: -190px;
     top: 27px;
+    
   }
+  
+  
   .timeline .entry .entry-date + span:before {
     display: none;
+    color:#fd9482;
   }
 }
 /* Blog Masonry Layout */
