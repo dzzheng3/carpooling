@@ -51,10 +51,14 @@ function checkForm(form)
  
 function calculateAge(dob)
 {
-    // var dob = document.getElementByName("dob").value;
-     var now = new Date();
-    var birthdate = now.getYear();
-    age= birthdate - dob;
+    
+  var now = new Date();
+  var today = now.getFullYear();
+ // alert("year====="+today);
+  var  age= today - dob;
+  alert("age====="+age);
+  console.log(today);
+  
     if  (age<18)
     {
        
@@ -101,7 +105,7 @@ function calculateAge(dob)
                                         </label>
                                         <input type="radio" name="gender" value = "1" checked /> Male
                                         <input type="radio" name="gender" value = "2"/> Female
-                                        <input type="radio" name="gender" value = "3" /> other
+                                       
                                     </div>                                                                                                          <div class="form-group">
                                         <label>
                                             State
